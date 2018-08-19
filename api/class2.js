@@ -210,8 +210,8 @@ router.get("/reservations/starting-on/:startDate", function(req, res) {
 // Create and end-point to get from /reservations/active-on/:date
 
 router.get("/reservations/active-on/:date", function(req, res) {
-  let { date } = req.params;
-  var sql = `select * from reservations where check_in_date <= ${date} and check_out_date > ${date}`;
+  let {date} = req.params;
+  var sql = `select * from reservations where check_in_date <= ${date} and (check_out_date > ${date} or check_out_date is null)`;
 
   db.all(sql, [], (err, rows) => {
     if (err) {

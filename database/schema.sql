@@ -90,8 +90,8 @@ foreign key
 
   INSERT INTO reservations (customer_id, room_id, check_in_date, room_price) VALUES (1,2,'2018-07-10', 200);
   INSERT INTO reservations (customer_id, room_id, check_in_date, room_price) VALUES (2,3,'2018-07-10', 500);
-  INSERT INTO reservations (customer_id, room_id, check_in_date, room_price) VALUES (3,4,'2018-07-10', 200);
-  INSERT INTO reservations (customer_id, room_id, check_in_date, room_price) VALUES (4,1,'2018-07-10', 700);
+  INSERT INTO reservations (customer_id, room_id, check_in_date, room_price) VALUES (3,4,'2018/07/10', 200);
+  INSERT INTO reservations (customer_id, room_id, check_in_date, room_price) VALUES (4,1,'2018/07/10', 700);
 
 select * from reservations;
 
