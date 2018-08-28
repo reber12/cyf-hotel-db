@@ -124,12 +124,8 @@ router.delete("/reservations/:id", function(req, res) {
 
 
 //Homework1
-  // const sql = `update customers set title = '${data2.title}', first_name = '${
-  //   data2.firstname
-  // }', surname = '${data2.surname}' where id ='${req.params.id}'`;
 
 router.put("/customers/customer/:id", function(req, res) {
-  // const data = req.body;
   let { title1, first_name1, surname1, email1 } = req.body;
   let sql_1 = `SELECT  * FROM customers WHERE id = '${req.params.id}'`;
   db.all(sql_1, [], (err, rows) => {
@@ -154,24 +150,6 @@ router.put("/customers/customer/:id", function(req, res) {
     const sql = `update customers set title = '${title1}', first_name = '${firstname1}', surname = '${surname1}', email = '${email1}' where id ='${
       req.params.id
     }'`;
-    // let { title, first_name, surname, email } = req.body;
-    // //update if values are different
-    // if (Array.isArray(customer) && customer.length === 1) {
-    //   title === undefined ? (title = customer[0].title) : title;
-    //   console.log("hi");
-    //   first_name === undefined ? (first_name = customer[0].first_name) : first_name;
-    //   surname === undefined ? (surname = customer[0].surname) : surname;
-    //   email === undefined ? (email = customer[0].email) : email;
-    // }
-    // let data = [title, first_name, surname, email, id];
-    // console.log("data:", data);
-    // let sql = `UPDATE customers
-    //              SET
-    //               title = ?,
-    //               first_name = ?,
-    //               surname = ?,
-    //               email = ?
-    //              WHERE id = ?`;
     db.all(sql, [], (err, row) => {
       if (err) {
         console.log("ERROR fetching from the database:", err);
