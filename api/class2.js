@@ -187,9 +187,8 @@ router.post("/reservations/", function(req, res) {
       return;
     }
     console.log("Request succeeded, new data fetched", data);
-    res.status(200).json({
-      customers: data
-    });
+    res.status(200).json(data
+    );
   });
 });
 
@@ -203,9 +202,7 @@ router.get("/reservations", function(req, res) {
       return;
     }
     console.log("Request succeeded, new data fetched", rows);
-    res.status(200).json({
-      customers: rows
-    });
+    res.set("Access-Control-Allow-Origin", "*").status(200).json(rows);
   });
 });
 
